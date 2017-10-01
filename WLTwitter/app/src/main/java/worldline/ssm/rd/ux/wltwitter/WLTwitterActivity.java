@@ -30,14 +30,16 @@ public class WLTwitterActivity extends Activity {
 				// Set as ActionBar subtitle
 				getActionBar().setSubtitle(login);
 
-				RetrieveTweetsAsyncTask task = new RetrieveTweetsAsyncTask();
+				TweetsFragment myListener = new TweetsFragment();
+
+				if(savedInstanceState == null){
+					getFragmentManager().beginTransaction().add(R.id.container, new TweetsFragment()).commit();
+				}
+
+				RetrieveTweetsAsyncTask task = new RetrieveTweetsAsyncTask(myListener);
 				task.execute(login);
 			}
 		}
-		
-		if (savedInstanceState == null && login != null) {
-			   getFragmentManager().beginTransaction().add(R.id.container, new TweetsFragment()).commit();
-		} 
 	}
 
 	@Override

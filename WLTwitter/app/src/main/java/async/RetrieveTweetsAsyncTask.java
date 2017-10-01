@@ -6,6 +6,7 @@ import java.util.List;
 
 import worldline.ssm.rd.ux.wltwitter.helpers.TwitterHelper;
 import worldline.ssm.rd.ux.wltwitter.pojo.Tweet;
+import worldline.ssm.rd.ux.wltwitter.ui.fragments.TweetsFragment;
 import worldline.ssm.rd.ux.wltwitter.utils.Constants;
 
 /**
@@ -13,6 +14,12 @@ import worldline.ssm.rd.ux.wltwitter.utils.Constants;
  */
 
 public class RetrieveTweetsAsyncTask extends AsyncTask<String, Void, List<Tweet>> {
+
+    TweetsFragment listener;
+
+    public RetrieveTweetsAsyncTask(TweetsFragment listener) {
+        this.listener = listener;
+    }
 
     @Override
     protected List<Tweet> doInBackground(String... strings) {
@@ -28,6 +35,9 @@ public class RetrieveTweetsAsyncTask extends AsyncTask<String, Void, List<Tweet>
         super.onPostExecute(tweets);
         for(int i = 0; i < tweets.size(); i++){
             System.out.println("[WLTwitter]"+tweets.get(i).text);
+        }
+        if(this.listener != null){
+            this.listener.onTweetRetrieved(tweets);
         }
     }
 }

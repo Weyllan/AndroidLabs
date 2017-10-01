@@ -24,6 +24,6 @@ public class TweetsFragment extends Fragment implements TweetChangeListener {
 
 	@Override
 	public void onTweetRetrieved(List<Tweet> tweets) {
-
+		System.out.println("[WLTwitter] Received");
 	}
 }
