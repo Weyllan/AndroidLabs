@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="@dimen/login_root_padding" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/login_center_panel_left_margin"
+        android:layout_marginRight="@dimen/login_center_panel_right_margin"
+        android:layout_marginTop="@dimen/login_center_panel_top_margin"
+        android:background="@drawable/blue_round_corners_background"
+        android:padding="@dimen/login_center_panel_padding" >
+
+        <EditText
+            android:id="@+id/loginEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:hint="@string/loginHint"
+            android:inputType="text"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/loginEditText"
+            android:layout_alignRight="@+id/loginEditText"
+            android:layout_below="@+id/loginEditText"
+            android:layout_marginTop="@dimen/login_center_panel_content_top_margin"
+            android:hint="@string/passwordHint"
+            android:inputType="textPassword"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/loginEditText"
+            android:layout_below="@+id/passwordEditText"
+            android:layout_marginTop="@dimen/login_center_panel_content_top_margin"
+            android:background="@drawable/white_blue_round_corners_selector"
+            android:text="@string/login"
+            android:textColor="@drawable/blue_white_text_selector" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/twitter" />
+
+</RelativeLayout>
