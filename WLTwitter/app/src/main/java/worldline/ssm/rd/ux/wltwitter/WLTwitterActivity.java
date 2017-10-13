@@ -33,7 +33,7 @@ public class WLTwitterActivity extends Activity {
 				TweetsFragment myListener = new TweetsFragment();
 
 				if(savedInstanceState == null){
-					getFragmentManager().beginTransaction().add(R.id.container, new TweetsFragment()).commit();
+					getFragmentManager().beginTransaction().add(R.id.container, myListener).commit();
 				}
 
 				RetrieveTweetsAsyncTask task = new RetrieveTweetsAsyncTask(myListener);
